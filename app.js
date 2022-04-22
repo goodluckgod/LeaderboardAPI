@@ -33,6 +33,16 @@ const BoardUtils = require('./Utils/Lb');
 const UserModel = require('./Models/User');
 const { Board } = require('./Configs/Lb');
 
+app.use('/eow', (req, res, next) => {
+    BoardUtils.EOW();
+    res.send('EOW');
+});
+
+app.use('/unionY', (req, res, next) => {
+    Board.unionY();
+    res.send('UnionY');
+});
+
 // BoardUtils.EOW();
 
 // Test Section

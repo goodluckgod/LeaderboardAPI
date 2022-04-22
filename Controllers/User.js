@@ -145,7 +145,16 @@ const DeleteAll = async (req, res, next) => {
             if (err) {
                 next(err);
             } else {
-                res.send('All users deleted');
+                try {
+                    for (let i = 0; i < 100; i++) {
+                        const user = new UserModel({username: `test${i}`, name: `test${i}`, country: 'TR'});
+                        await user.save();
+                        BoardUtils.Add(`User${i}`, 0);
+                    }
+                    res.send('All users deleted');
+                } catch (error) {
+                    next(error)
+                }
             }
         });
     } catch (error) {
