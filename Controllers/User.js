@@ -141,20 +141,11 @@ const List = async (req, res, next) => {
 const DeleteAll = async (req, res, next) => {
     try {
         await UserModel.deleteMany();
-        Board.rmAll(async (err, success) => {
+        Board.rmAll((err, success) => {
             if (err) {
                 next(err);
             } else {
-                try {
-                    for (let i = 0; i < 100; i++) {
-                        const user = new UserModel({username: `test${i}`, name: `test${i}`, country: 'TR'});
-                        await user.save();
-                        BoardUtils.Add(`User${i}`, 0);
-                    }
-                    res.send('All users deleted');
-                } catch (error) {
-                    next(error)
-                }
+                res.send('All users deleted');
             }
         });
     } catch (error) {

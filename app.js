@@ -43,23 +43,30 @@ app.use('/unionY', (req, res, next) => {
     res.send('UnionY');
 });
 
+const Create = async (i) => {
+    try {
+        const user = new UserModel({username: `test${i}`, name: `test${i}`, country: 'TR'});
+        await user.save();
+        BoardUtils.Add("test" + i, 0).then(data => {
+            
+        });
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
+app.use('/create', (req, res, next) => {
+    for (let i = 0; i < 100; i++) {
+     Create(i)   
+    }
+    res.send('Users Created');
+});
+
 // Test Section
 
-// const Create = async (i) => {
-//     try {
-//         const user = new UserModel({username: `test${i}`, name: `test${i}`, country: 'TR'});
-//         await user.save();
-//         BoardUtils.Add("test" + i, 0).then(data => {
-            
-//         });
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
 
-// for (let i = 0; i < 100; i++) {
-//  Create(i)   
-// }
 
 // Cronjobs
 
