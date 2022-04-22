@@ -4,7 +4,7 @@
   "description": "Backend API for Panteon Leaderboard Project with Redis and Mongoose",
   "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "test": "nodemon app.js"
   },
   "author": "Doğukan Duran",
