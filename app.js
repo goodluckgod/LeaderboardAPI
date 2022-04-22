@@ -43,8 +43,6 @@ app.use('/unionY', (req, res, next) => {
     res.send('UnionY');
 });
 
-// BoardUtils.EOW();
-
 // Test Section
 
 // const Create = async (i) => {
