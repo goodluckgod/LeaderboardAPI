@@ -1,0 +1,24 @@
+{
+  "name": "panteon-leaderboard-backend",
+  "version": "0.0.1",
+  "description": "Backend API for Panteon Leaderboard Project with Redis and Mongoose",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "nodemon app.js"
+  },
+  "author": "Doğukan Duran",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.3",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "leaderboard": "^0.0.9",
+    "mongoose": "^6.3.0",
+    "redis": "^3.0.0",
+    "validator": "^13.7.0"
+  }
+}
