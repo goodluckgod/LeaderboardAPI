@@ -8,6 +8,7 @@ router.get('/Read/:id', UserController.Read);
 router.put('/Update/:id', UserController.Update);
 router.delete('/Delete/:id', UserController.Delete);
 router.put('/IncreaseMoney/:id', UserController.IncreaseMoney);
+router.get('/List', UserController.List);
 router.get('/List/:username', UserController.List);
 // Only for testing
 router.delete('/DeleteAll', UserController.DeleteAll);
