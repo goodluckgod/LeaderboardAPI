@@ -90,7 +90,7 @@ const List = async (req, res, next) => {
                     }
                 }));
 
-                const CurrentUser = await UserModel.findOne({username: req.body.username});
+                const CurrentUser = await UserModel.findOne({username: req.params.username});
 
                 if (CurrentUser) {
                     const CurrentUserBoard = await BoardUtils.GetRankAndScore(CurrentUser.username)
