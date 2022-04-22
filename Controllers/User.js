@@ -141,7 +141,7 @@ const List = async (req, res, next) => {
 const DeleteAll = async (req, res, next) => {
     try {
         await UserModel.deleteMany();
-        Board.rmAll((err, success) => {
+        Board.rmAll(async (err, success) => {
             if (err) {
                 next(err);
             } else {
