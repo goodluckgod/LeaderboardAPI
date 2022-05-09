@@ -97,7 +97,7 @@ const EOW = () => {
         } else {
             Board.list(0, async (err, users) => {
                 users.forEach(async (user, i) => {
-                    doc.prizePool = 10000
+//                     doc.prizePool = 10000
 
                     user = await UserModel.findOne({username: user.member});
                     
